@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: ConfigServer  # 应用名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/LevineZ/SpringCloudConfig #配置文件所在仓库
+          username: 2601551928@qq.com
+          password: zh3502057672
+          default-label: master #配置文件分支
+          search-paths: config  #配置文件所在根目录
+server:
+  port: 2333
