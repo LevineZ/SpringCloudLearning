@@ -9,6 +9,10 @@
         <module>EurekaClient2</module>
         <module>Ribbon</module>
         <module>Feign</module>
+        <module>ConfigRepo</module>
+        <module>ConfigClient</module>
+        <module>Zuul</module>
+        <module>ConfigClient</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -59,9 +63,9 @@
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-            <version>[2.0.4,)</version>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-config-server</artifactId>
+        <version>2.2.0.RELEASE</version>
         </dependency>
     </dependencies>
 
