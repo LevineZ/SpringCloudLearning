@@ -77,7 +77,38 @@ class DemoApplicationTests {
     }
 
 
+    @Test
+    public void find4() {
+        Book book = bookDao.findBookById(3);
+        System.out.println(book);
+    }
 
 
+    @Test
+    public void find5() {
+        List<Book> list = bookDao.findBookByIdGreaterThan(3);
+        System.out.println(list);
+
+        List<Book> list1 = bookDao.findBookByIdLessThanOrNameContaining(3, "SpringCloudLearnig");
+        System.out.println(list1);
+
+    }
+
+    @Test
+    public void find6() {
+        Book book = bookDao.getMaxIdBook();
+        System.out.println(book);
+
+    }
+
+    @Test
+    public void find7() {
+        Integer addBook1 = bookDao.addBook1("Levine", "SpringCloudLearning");
+        System.out.println(addBook1);
+
+        Integer addBook2 = bookDao.addBook2("Michael", "SpringData");
+        System.out.println(addBook2);
+
+    }
 
 }
