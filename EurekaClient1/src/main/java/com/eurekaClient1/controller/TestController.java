@@ -25,9 +25,7 @@ public class TestController {
         System.out.println(instance);
         Integer r=a+b;
         return r;
-//        JSONObject json = new JSONObject();
-//        json.put("SpringCloud", 1);
-//        return json.toString();
+
     }
 
 }

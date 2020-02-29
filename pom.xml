@@ -9,6 +9,10 @@
         <module>EurekaClient2</module>
         <module>Ribbon</module>
         <module>Feign</module>
+        <module>ConfigRepo</module>
+        <module>ConfigClient</module>
+        <module>Zuul</module>
+        <module>ConfigClient</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -25,7 +29,6 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -46,22 +49,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test</artifactId>
-            <version>2.2.2.RELEASE</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-commons</artifactId>
-            <version>2.1.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-            <version>[2.0.4,)</version>
         </dependency>
     </dependencies>
 
