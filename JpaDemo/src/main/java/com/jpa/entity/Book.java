@@ -2,6 +2,7 @@ package com.jpa.entity;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity(name = "t_book")
 public class Book {
@@ -11,6 +12,15 @@ public class Book {
     //@Column()
     private String name;
     private String auther;
+    private String sendTime;
+
+    public String getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(String sendTime) {
+        this.sendTime = sendTime;
+    }
 
     public Integer getId() {
         return id;
@@ -36,12 +46,5 @@ public class Book {
         this.auther = auther;
     }
 
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", auther='" + auther + '\'' +
-                '}';
-    }
+
 }
