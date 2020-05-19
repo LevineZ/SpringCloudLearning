@@ -13,6 +13,7 @@
         <module>ConfigClient</module>
         <module>Zuul</module>
         <module>ConfigClient</module>
+        <module>test</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -10,8 +10,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @SpringBootTest
 class DemoApplicationTests {
@@ -40,6 +41,11 @@ class DemoApplicationTests {
     }
 
     @Test
+    public void insert() {
+        bookDao.addBook1("Java","Levine");
+    }
+
+    @Test
     public void delete() {
         bookDao.deleteById(2);
 
@@ -53,13 +59,6 @@ class DemoApplicationTests {
         System.out.println(all);
     }
 
-    @Test
-    public void find2() {
-        //List<Book> list = bookDao.findAll(new Sort(Sort.Direction.DESC, "id"));
-        //List<Book> list = bookDao.findAll(new Sort(Sort.Direction.DESC, "id"));
-       // System.out.println(list);
-
-    }
 
     @Test
     public void find3() {
@@ -97,18 +96,66 @@ class DemoApplicationTests {
     @Test
     public void find6() {
         Book book = bookDao.getMaxIdBook();
-        System.out.println(book);
+        System.out.println(book.toString());
 
     }
 
     @Test
     public void find7() {
-        Integer addBook1 = bookDao.addBook1("Levine", "SpringCloudLearning");
-        System.out.println(addBook1);
+        //Integer addBook1 = bookDao.addBook1("Levine", "SpringCloudLearning");
+        //System.out.println(addBook1);
 
         Integer addBook2 = bookDao.addBook2("Michael", "SpringData");
         System.out.println(addBook2);
 
     }
+
+    @Test
+    public void caculate() {
+        double x=1;
+        double a = Math.log(Math.sqrt(1 + Math.pow(x, 2.0))) + 1;
+        if (a == 4) {
+            System.out.println(-x);
+        }
+    }
+
+    @Test
+    public void fun() {
+        List<Map<String, Object>> lsl = new ArrayList<>();
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("id", "1");
+        map.put("name", "levine");
+        lsl.add(map);
+
+        Map<String, Object> map1 = new HashMap<>();
+        map1.put("id", "2");
+        map1.put("name", "levine");
+        lsl.add(map1);
+
+        Map<String, Object> map2 = new HashMap<>();
+        map1.put("id", "1");
+        map1.put("name", "lalallala");
+        lsl.add(map2);
+
+        Map<String, Object> map3 = new HashMap<>();
+        map1.put("id", "2");
+        map1.put("name", "hahahha");
+        lsl.add(map3);
+
+        Map<String, List<Map<String, Object>>> collect = lsl.stream().collect(Collectors.groupingBy(s));
+        System.out.println(collect);
+
+    }
+    Function<Map<String,Object>, String>  s = new Function<Map<String,Object>, String>() {
+
+        @Override
+        public String apply(Map<String, Object> t) {
+            Object object = t.get("id");
+            String string = object.toString();
+            return string;
+        }
+    };
+
 
 }
