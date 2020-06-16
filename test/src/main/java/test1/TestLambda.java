@@ -1,9 +1,9 @@
 package test1;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import sun.security.action.GetBooleanAction;
+
+import java.util.*;
 
 
 public class TestLambda {
@@ -22,16 +22,28 @@ public class TestLambda {
 
     private static void filter(List<Hero> heros) {
         for (Hero hero : heros) {
-            if(hero.hp>100 && hero.damage<50)
+            if(hero.hp>100 && hero.damage<50) {
                 System.out.print(hero);
+            }
         }
     }
+
     /**
      * private static void filter(List<Hero> heros,HeroChecker checker) {
-     *         for (Hero hero : heros) {
-     *             if(checker.test(hero))
-     *                 System.out.print(hero);
-     *         }
+     * for (Hero hero : heros) {
+     * if(checker.test(hero))
+     * System.out.print(hero);
+     * }
      */
+
+
+    private Boolean GetB() {
+        Map<String, Boolean> map = new HashMap<String, Boolean>();
+        Boolean b = (map!=null ? map.get("test") : false);
+        System.out.println(b);
+        return b;
+    }
+
+
 
 }
